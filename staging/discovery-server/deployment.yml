@@ -1,17 +1,16 @@
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: petclinic-visits-service
-  name: petclinic-visits-service-deployment
+    app: petclinic-discovery-server
+  name: petclinic-discovery-server-deployment
   namespace: petclinic-staging
 spec:
   replicas: 1
   revisionHistoryLimit: 11
   selector:
     matchLabels:
-      app: shopnow-product-service
+      app: petclinic-discovery-server
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -20,15 +19,15 @@ spec:
   template:
     metadata:
       labels:
-        app: petclinic-visits-service
+        app: petclinic-discovery-server
       namespace: petclinic-staging
     spec:
       containers:
-        - image: thuanlp/spring-petclinic-visits-service:latest
+        - image: thuanlp/spring-petclinic-discovery-server:latest
           imagePullPolicy: Always
-          name: petclinic-visits-service
+          name: petclinic-discovery-server
           ports:
-            - containerPort: 8083
+            - containerPort: 8761
               name: tcp
               protocol: TCP
           resources:
@@ -40,7 +39,7 @@ spec:
               cpu: "800m"
           volumeMounts:
             - mountPath: /app/src/main/resources/application.properties
-              name: petclinic-visits-service-application-properties-config-volume
+              name: petclinic-discovery-server-application-properties-config-volume
               subPath: application.properties
       imagePullSecrets:
       - name: dockerhub
@@ -49,6 +48,6 @@ spec:
       volumes:
         - configMap:
             defaultMode: 420
-            name: petclinic-visits-service-application-properties-configmap
-          name: petclinic-visits-service-application-properties-config-volume
+            name: petclinic-discovery-server-application-properties-configmap
+          name: petclinic-discovery-server-application-properties-config-volume
           
