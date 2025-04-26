@@ -1,1 +1,1 @@
-Update Docker tags: spring-petclinic-visits-service:b2086c8
+Update Docker tags: spring-petclinic-visits-service:f3c25d4
