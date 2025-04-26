@@ -24,7 +24,7 @@ spec:
       namespace: petclinic-dev
     spec:
       containers:
-        - image: thuanlp/spring-petclinic-visits-service:
+        - image: thuanlp/spring-petclinic-visits-service:b2086c8
           imagePullPolicy: Always
           name: petclinic-visits-service
           ports:
