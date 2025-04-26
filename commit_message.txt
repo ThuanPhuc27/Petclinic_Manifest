@@ -1,1 +1,1 @@
-Update Docker tags: admin-server:latest, api-gateway:latest, config-server:latest, customers-service:latest, discovery-server:latest, genai-service:latest, vets-service:latest, visits-service:a0c631b
+Update Docker tags: 
