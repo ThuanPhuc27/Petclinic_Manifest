@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: petclinic-discovery-server-application-properties-configmap
+  namespace: petclinic-dev
+data:
+  application.properties: |
