@@ -57,7 +57,7 @@ pipeline {
 
                         // Cập nhật image tag vào deployment.yaml của service
                         sh """
-                        sed -i 's|image:.*|image: ${DOCKERHUB_USERNAME}/spring-petclinic-${service.name}:${imageTag}|' dev/${service.name}/deployment.yaml
+                        sed -i 's|image:.*|image: ${DOCKERHUB_USERNAME}/spring-petclinic-${service.name}:${imageTag}|' dev/${service.name}/deployment.yml
                         """
 
                         // Thêm mô tả ngắn gọn vào commit message
