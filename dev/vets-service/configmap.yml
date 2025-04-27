@@ -1,7 +1,7 @@
-#apiVersion: v1
-#kind: ConfigMap
-#metadata:
-#  name: petclinic-vets-service-application-properties-configmap
-#  namespace: petclinic-dev
-#data:
-#  application.properties: |
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: petclinic-vets-service-application-properties-configmap
+  namespace: petclinic-dev
+data:
+  application.properties: |
