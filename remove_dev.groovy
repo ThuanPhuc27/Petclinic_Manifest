@@ -36,14 +36,23 @@ pipeline {
             steps {
                 dir('Petclinic_Manifest/dev') {
                     script {
-                        // Tìm tất cả các file .yml trong thư mục dev và comment tất cả các dòng trong đó
-                        sh """
-                            find . -name "*.yml" -exec sed -i 's/^/#/' {} \\;
-                        """
+                        // Tìm tất cả file .yml và xử lý từng file
+                        sh '''
+                            find . -name "*.yml" | while read file; do
+                                # Nếu file có dòng nào chưa bắt đầu bằng # thì mới comment
+                                if grep -q '^[^#[:space:]]' "$file"; then
+                                    echo "Commenting $file"
+                                    sed -i '/^[^#]/s/^/#/' "$file"
+                                else
+                                    echo "Skipping $file (already commented)"
+                                fi
+                            done
+                        '''
                     }
                 }
             }
         }
+
 
         stage('Commit and Push Changes') {
             steps {
@@ -55,8 +64,13 @@ pipeline {
                             git config user.email "jenkins-bot@lptdevops.com"
 
                             git add .
-                            git commit -m "Commented out all YAML files in dev folder"
-                            git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/ThuanPhuc27/Petclinic_Manifest.git ${params.branch}
+                            # Check nếu có thay đổi thì mới commit
+                            if ! git diff --cached --quiet; then
+                                git commit -m "Commented out all YAML files in dev folder"
+                                git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/ThuanPhuc27/Petclinic_Manifest.git ${params.branch}
+                            else
+                                echo "No changes to commit. Skipping commit and push."
+                            fi
                         """
                     }
                 }

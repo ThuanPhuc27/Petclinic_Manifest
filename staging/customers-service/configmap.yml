@@ -5,3 +5,5 @@ metadata:
   namespace: petclinic-staging
 data:
   application.properties: |
+    spring.application.name=customers-service
+    spring.config.import=optional:configserver:${CONFIG_SERVER_URL:http://petclinic-config-server-service:8888/}
