@@ -28,7 +28,7 @@ spec:
           imagePullPolicy: Always
           name: petclinic-visits-service
           ports:
-            - containerPort: 8083
+            - containerPort: 8082
               name: tcp
               protocol: TCP
           resources:
