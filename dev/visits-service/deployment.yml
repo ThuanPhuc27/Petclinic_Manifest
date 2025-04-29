@@ -32,7 +32,7 @@ spec:
               name: tcp
               protocol: TCP
           volumeMounts:
-            - mountPath: /app/src/main/resources/application.properties
+            - mountPath: /app/config/application.properties
               name: petclinic-visits-service-application-properties-config-volume
               subPath: application.properties
       imagePullSecrets:
