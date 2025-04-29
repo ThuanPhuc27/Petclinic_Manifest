@@ -21,6 +21,3 @@ spec:
               memory: 512Mi
           ports:
             - containerPort: 9411
-          env:
-            - name: JAVA_OPTS
-              value: "-XX:UseSVE=0"
