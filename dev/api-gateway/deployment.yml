@@ -33,10 +33,10 @@ spec:
           resources:
             requests:
               memory: "350Mi"
-              cpu: "40m"
+              cpu: "100m"
             limits:
               memory: "400Mi"
-              cpu: "50m"
+              cpu: "150m"
           volumeMounts:
             - mountPath: /app/src/main/resources/application.properties
               name: petclinic-api-gateway-application-properties-config-volume
