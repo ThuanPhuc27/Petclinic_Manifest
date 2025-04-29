@@ -30,13 +30,6 @@ spec:
             - containerPort: 8080
               name: tcp
               protocol: TCP
-          resources:
-            requests:
-              memory: "350Mi"
-              cpu: "100m"
-            limits:
-              memory: "400Mi"
-              cpu: "150m"
           volumeMounts:
             - mountPath: /app/src/main/resources/application.properties
               name: petclinic-api-gateway-application-properties-config-volume

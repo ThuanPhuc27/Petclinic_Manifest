@@ -30,13 +30,6 @@ spec:
             - containerPort: 8084
               name: tcp
               protocol: TCP
-          resources:
-            requests:
-              memory: "350Mi"
-              cpu: "150m"
-            limits:
-              memory: "400Mi"
-              cpu: "200m"
           volumeMounts:
             - mountPath: /app/config/application.properties
               name: petclinic-genai-service-application-properties-config-volume

@@ -31,13 +31,6 @@ spec:
             - containerPort: 8082
               name: tcp
               protocol: TCP
-          resources:
-            requests:
-              memory: "350Mi"
-              cpu: "60m"
-            limits:
-              memory: "400Mi"
-              cpu: "100m"
           volumeMounts:
             - mountPath: /app/src/main/resources/application.properties
               name: petclinic-visits-service-application-properties-config-volume
