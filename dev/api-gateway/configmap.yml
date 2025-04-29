@@ -39,4 +39,4 @@ data:
     spring.cloud.gateway.routes[3].filters[1]=CircuitBreaker=name=genaiCircuitBreaker,fallbackUri=/fallback
     
     spring.config.activate.on-profile=docker
-    spring.config.import=configserver:http://config-server:8888
+    spring.config.import=configserver:http://petclinic-config-server-service:8888
