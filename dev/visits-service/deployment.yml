@@ -11,7 +11,7 @@ spec:
   revisionHistoryLimit: 11
   selector:
     matchLabels:
-      app: shopnow-product-service
+      app: petclinic-visits-service
   strategy:
     rollingUpdate:
       maxSurge: 25%
