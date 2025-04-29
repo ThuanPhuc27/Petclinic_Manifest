@@ -33,10 +33,10 @@ spec:
           resources:
             requests:
               memory: "350Mi"
-              cpu: "60m"
+              cpu: "150m"
             limits:
               memory: "400Mi"
-              cpu: "100m"
+              cpu: "200m"
           volumeMounts:
             - mountPath: /app/config/application.properties
               name: petclinic-genai-service-application-properties-config-volume
