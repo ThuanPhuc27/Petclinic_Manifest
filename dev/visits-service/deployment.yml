@@ -33,11 +33,11 @@ spec:
               protocol: TCP
           resources:
             requests:
-              memory: "400Mi"
-              cpu: "500m"
+              memory: "350Mi"
+              cpu: "20m"
             limits:
-              memory: "500Mi"
-              cpu: "800m"
+              memory: "400Mi"
+              cpu: "30m"
           volumeMounts:
             - mountPath: /app/src/main/resources/application.properties
               name: petclinic-visits-service-application-properties-config-volume
