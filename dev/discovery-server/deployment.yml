@@ -30,13 +30,6 @@ spec:
             - containerPort: 8761
               name: tcp
               protocol: TCP
-          resources:
-            requests:
-              memory: "300Mi"
-              cpu: "15m"
-            limits:
-              memory: "400Mi"
-              cpu: "20m"
           volumeMounts:
             - mountPath: /app/config/application.properties
               name: petclinic-discovery-server-application-properties-config-volume
