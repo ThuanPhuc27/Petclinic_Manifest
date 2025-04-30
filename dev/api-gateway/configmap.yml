@@ -18,7 +18,7 @@ data:
     spring.cloud.gateway.default-filters[1].args.methods=POST
     
     spring.cloud.gateway.routes[0].id=vets-service
-    spring.cloud.gateway.routes[0].uri=http://petclinic-config-server-service:8083
+    spring.cloud.gateway.routes[0].uri=http://petclinic-vets-service-service:8083
     spring.cloud.gateway.routes[0].predicates[0]=Path=/api/vet/**
     spring.cloud.gateway.routes[0].filters[0]=StripPrefix=2
     
