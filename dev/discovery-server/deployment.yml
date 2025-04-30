@@ -46,7 +46,7 @@ spec:
           image: darthcabs/tiny-tools
           command: ["sh", "-c", "until curl -s http://petclinic-config-server-service:8888/; do echo waiting for config server; sleep 5; done"]
       imagePullSecrets:
-      - name: darthcabs/tiny-tools
+      - name: dockerhub
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       volumes:
