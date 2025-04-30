@@ -43,4 +43,3 @@ spec:
             defaultMode: 420
             name: petclinic-api-gateway-application-properties-configmap
           name: petclinic-api-gateway-application-properties-config-volume
-          

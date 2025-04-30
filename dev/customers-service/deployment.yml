@@ -34,7 +34,6 @@ spec:
           volumeMounts:
             - mountPath: /app/config/application.properties
               name: petclinic-customers-service-application-properties-volume
-              
               subPath: application.properties
       imagePullSecrets:
       - name: dockerhub
