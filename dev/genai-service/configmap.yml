@@ -7,7 +7,6 @@ data:
   application.properties: |
     spring.main.web-application-type=reactive
     spring.application.name=genai-service
-    spring.profiles.active=production
     spring.config.import=optional:configserver:${CONFIG_SERVER_URL:http://petclinic-config-server-service:8888/},optional:classpath:/creds.yaml
     spring.ai.chat.client.enabled=true
     spring.ai.azure.openai.api-key=${AZURE_OPENAI_KEY}
