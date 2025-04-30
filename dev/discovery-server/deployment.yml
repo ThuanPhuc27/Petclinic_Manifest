@@ -43,10 +43,10 @@ spec:
               subPath: application.properties
       initContainers:
         - name: init-discovery-server
-          image: busybox:1.28
+          image: darthcabs/tiny-tools
           command: ["sh", "-c", "until curl -s http://petclinic-config-server-service:8888/; do echo waiting for config server; sleep 5; done"]
       imagePullSecrets:
-      - name: dockerhub
+      - name: darthcabs/tiny-tools
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       volumes:
