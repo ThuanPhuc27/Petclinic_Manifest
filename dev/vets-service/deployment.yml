@@ -30,10 +30,27 @@ spec:
             - containerPort: 8083
               name: tcp
               protocol: TCP
+          resources:
+            requests:
+              memory: "400Mi"
+              cpu: "15m"
+            limits:
+              memory: "500Mi"
+              cpu: "20m"
           volumeMounts:
             - mountPath: /app/config/application.properties
               name: petclinic-vets-service-application-properties-config-volume
               subPath: application.properties
+      initContainers:
+        - name: wait-for-config-server
+          image: busybox:1.28
+          command:
+            ["sh", "-c", "until curl -s http://petclinic-config-server-service:8888/; do echo waiting for config server; sleep 5; done"]
+      
+        - name: wait-for-discovery-server
+          image: busybox:1.28
+          command:
+            ["sh", "-c", "until curl -s http://spring-petclinic-discovery-server:8761/; do echo waiting for discovery server; sleep 5; done"]
       imagePullSecrets:
       - name: dockerhub
       dnsPolicy: ClusterFirst
