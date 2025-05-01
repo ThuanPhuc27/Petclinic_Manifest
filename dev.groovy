@@ -90,7 +90,8 @@ pipeline {
                             echo "Using image tag: ${imageTag}"
 
                             sh """
-                                sed -i 's|image:.*|image: ${DOCKERHUB_USERNAME}/spring-petclinic-${service.name}:${imageTag}|' dev/${service.name}/deployment.yml
+                                yq eval '.spec.template.spec.containers[0].image = "${DOCKERHUB_USERNAME}/spring-petclinic-${service.name}:${imageTag}"' -i dev/${service.name}/deployment.yml
+
                             """
                         }
 

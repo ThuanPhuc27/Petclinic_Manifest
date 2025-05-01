@@ -12,8 +12,3 @@ spec:
       port: 8084         
       targetPort: 8084    
       nodePort: 30084  
-  sessionAffinity: None
-  internalTrafficPolicy: Cluster
-  ipFamilies:
-    - IPv4
-  ipFamilyPolicy: SingleStack

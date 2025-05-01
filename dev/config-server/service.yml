@@ -12,8 +12,3 @@ spec:
       port: 8888         
       targetPort: 8888    
       nodePort: 30088     
-  sessionAffinity: None
-  internalTrafficPolicy: Cluster
-  ipFamilies:
-    - IPv4
-  ipFamilyPolicy: SingleStack

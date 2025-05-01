@@ -12,8 +12,3 @@ spec:
       port: 8761         
       targetPort: 8761    
       nodePort: 30061    
-  sessionAffinity: None
-  internalTrafficPolicy: Cluster
-  ipFamilies:
-    - IPv4
-  ipFamilyPolicy: SingleStack

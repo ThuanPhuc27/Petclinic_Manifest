@@ -12,8 +12,3 @@ spec:
       port: 8082         
       targetPort: 8082    
       nodePort: 30082 
-  sessionAffinity: None
-  internalTrafficPolicy: Cluster
-  ipFamilies:
-    - IPv4
-  ipFamilyPolicy: SingleStack

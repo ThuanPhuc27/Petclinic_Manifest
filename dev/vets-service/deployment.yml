@@ -36,12 +36,12 @@ spec:
               subPath: application.properties
       initContainers:
         - name: wait-for-config-server
-          image: thuanlp/spring-petclinic-vets-service:latest
+          image: darthcabs/tiny-tools:1
           command:
             ["sh", "-c", "until curl -s http://petclinic-config-server-service:8888/; do echo waiting for config server; sleep 5; done"]
       
         - name: wait-for-discovery-server
-          image: thuanlp/spring-petclinic-vets-service:latest
+          image: darthcabs/tiny-tools:1
           command:
             ["sh", "-c", "until curl -s http://petclinic-discovery-server-service:8761/; do echo waiting for discovery server; sleep 5; done"]
       imagePullSecrets:

@@ -12,8 +12,3 @@ spec:
       port: 8081         
       targetPort: 8081    
       nodePort: 30081    
-  sessionAffinity: None
-  internalTrafficPolicy: Cluster
-  ipFamilies:
-    - IPv4
-  ipFamilyPolicy: SingleStack
