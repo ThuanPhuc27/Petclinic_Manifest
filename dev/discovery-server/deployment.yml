@@ -39,7 +39,7 @@ spec:
           image: darthcabs/tiny-tools:1
           command: ["sh", "-c", "until curl -s http://petclinic-config-server-service:8888/; do echo waiting for config server; sleep 5; done"]
       imagePullSecrets:
-      - name: dockerhub
+        - name: dockerhub
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       volumes:
@@ -47,4 +47,3 @@ spec:
             defaultMode: 420
             name: petclinic-discovery-server-application-properties-configmap
           name: petclinic-discovery-server-application-properties-config-volume
-          

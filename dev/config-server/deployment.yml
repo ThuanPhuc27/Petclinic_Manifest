@@ -36,7 +36,7 @@ spec:
               name: petclinic-config-server-application-properties-config-volume
               subPath: application.properties
       imagePullSecrets:
-      - name: dockerhub
+        - name: dockerhub
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       volumes:
@@ -44,4 +44,3 @@ spec:
             defaultMode: 420
             name: petclinic-config-server-application-properties-configmap
           name: petclinic-config-server-application-properties-config-volume
-          
